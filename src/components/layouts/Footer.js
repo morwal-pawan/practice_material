@@ -11,7 +11,10 @@ import Icon from "@material-ui/core/Icon";
 const Footer = props => {
   return (
     <MuiThemeProvider>
-      <Tabs>
+      <Tabs
+      indicatorColor="primary"
+      textColor="primary"
+      >
         {/* <Tab
           icon={<FontIcon className="material-icons">phone</FontIcon>}
           label="RECENTS"
