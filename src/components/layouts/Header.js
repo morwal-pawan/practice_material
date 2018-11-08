@@ -1,19 +1,22 @@
 import React, { Fragment } from "react";
-import {AppBar,Toolbar} from "material-ui";
+import { AppBar, Toolbar } from "material-ui";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import Typography from '@material-ui/core/Typography';
+import Typography from "@material-ui/core/Typography";
 
 const Header = props => {
   return (
-    <MuiThemeProvider>
-      <AppBar position="static">
-        <Toolbar >
-        <Typography variant="subheading" align="center" gutterBottom={true} color="inherit">
+    <AppBar position="static">
+      <Toolbar>
+        <Typography
+          variant="subheading"
+          align="center"
+          gutterBottom={true}
+          color="inherit"
+        >
           Headline
         </Typography>
-        </Toolbar>
-      </AppBar>
-    </MuiThemeProvider>
+      </Toolbar>
+    </AppBar>
   );
 };
 export default Header;

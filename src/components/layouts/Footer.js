@@ -10,21 +10,16 @@ import Icon from "@material-ui/core/Icon";
 
 const Footer = props => {
   return (
-    <MuiThemeProvider>
-      <Tabs
-      indicatorColor="primary"
-      textColor="primary"
-      >
-        {/* <Tab
+    <Tabs indicatorColor="primary" textColor="primary">
+      {/* <Tab
           icon={<FontIcon className="material-icons">phone</FontIcon>}
           label="RECENTS"
         /> */}
-        <Tab icon={<Phone />} label="RECENTS" />
-        <Tab icon={<Alarm />} label="ACTIVITY" />
-        <Tab icon={<Favorite />} label="FAVORITES" />
-        <Tab icon={<MapsPersonPin />} label="NEARBY" />
-      </Tabs>
-    </MuiThemeProvider>
+      <Tab icon={<Phone />} label="RECENTS" />
+      <Tab icon={<Alarm />} label="ACTIVITY" />
+      <Tab icon={<Favorite />} label="FAVORITES" />
+      <Tab icon={<MapsPersonPin />} label="NEARBY" />
+    </Tabs>
   );
 };
 export default Footer;
