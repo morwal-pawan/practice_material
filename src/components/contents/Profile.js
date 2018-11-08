@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
+import classNames from 'classnames';
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -9,8 +10,10 @@ import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import CardMedia from "@material-ui/core/CardMedia";
-
-const styles = {
+import Icon from '@material-ui/core/Icon';
+import red from '@material-ui/core/colors/red';
+ 
+const styles =theme=> ({
   card: {
     minWidth: 275,
     paddingTop: 16,
@@ -24,16 +27,23 @@ const styles = {
     paddingRight: 10,
     paddingBottom: 16
   },
-
   title: {
     fontSize: 14
   },
-
+  icon: {
+    margin: theme.spacing.unit * 2,
+  },
+  iconHover: {
+    margin: theme.spacing.unit * 2,
+    '&:hover': {
+      color: red[800],
+    },
+  },
   media: {
     objectFit: "cover",
      height:60
   }
-};
+});
 
 class Profile extends Component {
   render() {
@@ -51,7 +61,8 @@ class Profile extends Component {
                 </Typography>
                 <Typography>Bengluru, IN</Typography>
                 <Typography variant="caption">
-                  Hot job. Expiring in 2 days
+                 {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
+                 Hot job. Expiring in 2 days
                 </Typography>
               </Grid>
             </CardContent>

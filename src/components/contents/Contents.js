@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { Grid, Paper } from "@material-ui/core";
-import Left from "./Left";
-import Right from "./Right";
+import Profile from "./Profile"
 
 const styles = {
   Paper: {
@@ -20,11 +19,8 @@ const Contents = props => {
       justify="space-between"
       alignItems="center"
     >
-      <Grid item xs>
-        <Left styles={styles} />
-      </Grid>
-      <Grid item xs>
-        <Right styles={styles} />
+       <Grid item xs>
+        <Profile styles={styles} />
       </Grid>
     </Grid>
   );
