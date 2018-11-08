@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import classNames from 'classnames';
+import classNames from "classnames";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,10 +10,10 @@ import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import CardMedia from "@material-ui/core/CardMedia";
-import Icon from '@material-ui/core/Icon';
-import red from '@material-ui/core/colors/red';
- 
-const styles =theme=> ({
+import Icon from "@material-ui/core/Icon";
+import red from "@material-ui/core/colors/red";
+
+const styles = theme => ({
   card: {
     minWidth: 275,
     paddingTop: 16,
@@ -27,21 +27,28 @@ const styles =theme=> ({
     paddingRight: 10,
     paddingBottom: 16
   },
+  divider: {
+    height: 1,
+    margin: 0,
+    border: "none",
+    backgroundColor: "rgba(0, 0, 0, 0.12)",
+    width: "inherit"
+  },
   title: {
     fontSize: 14
   },
   icon: {
-    margin: theme.spacing.unit * 2,
+    margin: theme.spacing.unit * 2
   },
   iconHover: {
     margin: theme.spacing.unit * 2,
-    '&:hover': {
-      color: red[800],
-    },
+    "&:hover": {
+      color: red[800]
+    }
   },
   media: {
     objectFit: "cover",
-     height:60
+    height: 60
   }
 });
 
@@ -54,15 +61,15 @@ class Profile extends Component {
         <Grid container spacing={0} alignItems="center" direction="column">
           <Grid container item xs direction="row" justify="space-between">
             <CardContent>
-              <Grid item >
+              <Grid item>
                 <Typography variant="title">Data Scientist</Typography>
                 <Typography variant="subheading">
                   Adbobe India Limited
                 </Typography>
                 <Typography>Bengluru, IN</Typography>
                 <Typography variant="caption">
-                 {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
-                 Hot job. Expiring in 2 days
+                  {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
+                  Hot job. Expiring in 2 days
                 </Typography>
               </Grid>
             </CardContent>
@@ -78,8 +85,7 @@ class Profile extends Component {
               </Grid>
             </CardContent>
           </Grid>
-
-          <Divider />
+          <hr className={classes.divider} />
           <Grid item xs>
             Specialities
           </Grid>
