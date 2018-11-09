@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import classNames from "classnames";
+import classnames from "classnames";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -12,6 +11,11 @@ import Divider from "@material-ui/core/Divider";
 import CardMedia from "@material-ui/core/CardMedia";
 import Icon from "@material-ui/core/Icon";
 import red from "@material-ui/core/colors/red";
+import Collapse from "@material-ui/core/Collapse";
+import IconButton from "@material-ui/core/IconButton";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 const styles = theme => ({
   card: {
@@ -37,8 +41,29 @@ const styles = theme => ({
   title: {
     fontSize: 14
   },
+  skillheading: {
+    color: "black",
+    display: "contents"
+  },
   icon: {
     margin: theme.spacing.unit * 2
+  },
+  actions: {
+    display: "flex",
+    flexDirection: "column"
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest
+    }),
+    marginLeft: "auto",
+    [theme.breakpoints.up("sm")]: {
+      marginRight: -8
+    }
+  },
+  expandOpen: {
+    transform: "rotate(180deg)"
   },
   iconHover: {
     margin: theme.spacing.unit * 2,
@@ -53,12 +78,23 @@ const styles = theme => ({
 });
 
 class Profile extends Component {
+  state = { expanded: false };
+
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
   render() {
     const { classes } = this.props;
 
     return (
       <Card className={classes.card}>
-        <Grid container spacing={0} alignItems="center" direction="column">
+        <Grid
+          container
+          spacing={8}
+          direction="column"
+          justify="space-evenly"
+          alignItems="center"
+        >
           <Grid container item xs direction="row" justify="space-between">
             <CardContent>
               <Grid item>
@@ -85,38 +121,57 @@ class Profile extends Component {
               </Grid>
             </CardContent>
           </Grid>
-          <hr className={classes.divider} />
+          <Divider className={classes.divider} />
           <Grid item xs>
-            Specialities
+            <CardActions className={classes.actions} disableActionSpacing>
+              <Typography paragraph>
+                <Typography
+                  variant="subtitle2"
+                  gutterBottom
+                  className={classes.skillheading}
+                >
+                  Specialities:
+                  {`Java,Node.js,Swing,Hibernate,
+                  J2EE,Hadoop,Spring...`}
+                </Typography>
+              </Typography>
+              <Grid
+                container
+                direction="row"
+                justify="flex-end"
+                alignItems="flex-end"
+              >
+                <Grid item>
+                  <p> Read more</p>
+                </Grid>
+                <Grid item>
+                  <IconButton
+                    className={classnames(classes.expand, {
+                      [classes.expandOpen]: this.state.expanded
+                    })}
+                    onClick={this.handleExpandClick}
+                    aria-expanded={this.state.expanded}
+                    label={"Read more"}
+                  >
+                    <ExpandMoreIcon />
+                  </IconButton>
+                </Grid>
+              </Grid>
+            </CardActions>
+            <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph>
+                  Heat oil in a (14- to 16-inch) paella pan or a large, deep
+                  skillet over medium-high heat. Add chicken, shrimp and
+                </Typography>
+                <Typography paragraph>
+                  Add rice and stir very gently to distribute. Top with
+                  artichokes and peppers, and cook without stirring, until most
+                </Typography>
+              </CardContent>
+            </Collapse>
           </Grid>
         </Grid>
-        {/* <CardContent>
-          <Typography
-            className={classes.title}
-            color="textSecondary"
-            gutterBottom
-          >
-            Word of the Day
-          </Typography>
-          <Typography variant="h5" component="h2">
-            be
-            {bull}
-            nev
-            {bull}o{bull}
-            lent
-          </Typography>
-          <Typography className={classes.pos} color="textSecondary">
-            adjective
-          </Typography>
-          <Typography component="p">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions> */}
       </Card>
     );
   }
