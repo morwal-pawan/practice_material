@@ -15,3 +15,11 @@ export const qualification = [
   "An understanding of business",
   "Analytical and commercial experience"
 ];
+
+export const perks = [
+  "Great benefits and opportunities to learn.",
+  "Everything is best in the company.",
+  "Activities planned for families every month.",
+  "Adobe is a company that genuinely cares about its employees. Has always been very supporting.",
+  "Best thing is the focus on Employee's good physical and mental health"
+];

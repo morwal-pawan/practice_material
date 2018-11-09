@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core";
 import { qualification } from "../../data/test_data";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import CheckCircle from "@material-ui/icons/CheckCircle";
+import Clear from "@material-ui/icons/Clear";
 
 const styles = theme => ({
   text: {
@@ -10,13 +11,18 @@ const styles = theme => ({
   }
 });
 
-const RolesResponsibility = ({ qualifications = qualification, classes }) => {
+const Qualification = ({ qualifications = qualification, classes }) => {
   return (
     <Fragment>
       {qualifications.map((value, index) => {
-        return (
+        return (index +1)% 3 !== 0 ? (
           <Typography variant="caption" className={classes.text}>
-            <FavoriteIcon />
+            <CheckCircle />
+            {value}
+          </Typography>
+        ) : (
+          <Typography variant="caption" className={classes.text}>
+            <Clear />
             {value}
           </Typography>
         );
@@ -25,4 +31,4 @@ const RolesResponsibility = ({ qualifications = qualification, classes }) => {
   );
 };
 
-export default withStyles(styles)(RolesResponsibility);
+export default withStyles(styles)(Qualification);
