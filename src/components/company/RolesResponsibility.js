@@ -11,7 +11,7 @@ const RolesResponsibility = ({ responsibilities = roles_responsibilities }) => {
       {responsibilities.map((value, index) => {
         return (
           <Typography variant="caption">
-            {index}. {value}
+            {index+1}. {value}
           </Typography>
         );
       })}
