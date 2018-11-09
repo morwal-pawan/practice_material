@@ -4,18 +4,16 @@ import classnames from "classnames";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import CardMedia from "@material-ui/core/CardMedia";
-import Icon from "@material-ui/core/Icon";
 import red from "@material-ui/core/colors/red";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import LinearProgresIndicator from "./LinearProgresIndicator";
+import ImageAvatars from "./ImageAvatars";
 
 const styles = theme => ({
   card: {
@@ -170,6 +168,30 @@ class Profile extends Component {
                 </Typography>
               </CardContent>
             </Collapse>
+          </Grid>
+          <Grid container itme xs direction="column" justify="space-between">
+            <Grid item>
+              <p> 90% pawan</p>
+              <LinearProgresIndicator />
+            </Grid>
+            <Grid
+              item
+              container
+              direction="row"
+              justify="space-around"
+              alignItems="center"
+              spacing={0}
+            >
+              <Grid>
+                <ImageAvatars />
+              </Grid>
+              <Grid>
+                <p> Postted by : Ramesh Singhak </p>
+              </Grid>
+              <Grid>
+                <p> & Quick response </p>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Card>
