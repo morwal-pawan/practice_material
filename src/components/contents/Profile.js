@@ -14,6 +14,9 @@ import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LinearProgresIndicator from "./LinearProgresIndicator";
 import ImageAvatars from "./ImageAvatars";
+import Button from "@material-ui/core/Button";
+import Icon from "@material-ui/core/Icon";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const styles = theme => ({
   card: {
@@ -38,6 +41,12 @@ const styles = theme => ({
   },
   title: {
     fontSize: 14
+  },
+  text: {
+    fontSize: 12
+  },
+  response: {
+    fontSize: 8
   },
   skillheading: {
     color: "black",
@@ -186,10 +195,19 @@ class Profile extends Component {
                 <ImageAvatars />
               </Grid>
               <Grid>
-                <p> Postted by : Ramesh Singhak </p>
+                <p className={classes.text}> Postted by : Ramesh Singhak </p>
               </Grid>
               <Grid>
-                <p> & Quick response </p>
+                <Button
+                  size="small"
+                  className={classes.response}
+                  color="primary"
+                >
+                  <IconButton aria-label="Add to favorites">
+                    <FavoriteIcon />
+                  </IconButton>
+                  Quick response
+                </Button>
               </Grid>
             </Grid>
           </Grid>
