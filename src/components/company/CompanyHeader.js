@@ -18,10 +18,18 @@ const styles = {
     objectFit: "cover"
   },
   logo: {
-    height:38,
+    height: 38,
     padding: 8,
-    marginTop:-25,
-    backgroundColor:'white'
+    marginTop: -27,
+    backgroundColor: "white"
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: 600
+  },
+  location: {
+    fontSize: 10,
+    fontWeight: 600
   }
 };
 
@@ -44,6 +52,20 @@ function CompanyHeader(props) {
               className={classes.logo}
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png"
             />
+          </Grid>
+          <Grid>
+            <Typography variant="title" className={classes.title} gutterBottom>
+              Front End Developer
+            </Typography>
+          </Grid>
+          <Grid>
+            <Typography className={classes.location}>Adobe, India</Typography>
+            <Typography
+              variant="caption"
+              gutterBottom
+            >
+              Bengulur, IN
+            </Typography>
           </Grid>
         </Grid>
         <CardContent>
