@@ -15,7 +15,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LinearProgresIndicator from "./LinearProgresIndicator";
 import ImageAvatars from "./ImageAvatars";
 import Button from "@material-ui/core/Button";
-import Icon from "@material-ui/core/Icon";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 
 const styles = theme => ({

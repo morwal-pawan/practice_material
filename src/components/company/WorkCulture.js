@@ -10,6 +10,7 @@ import { workCulture } from "../../data/test_data";
 
 const styles = theme => ({
   root: {
+    paddingTop:10,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
@@ -19,13 +20,14 @@ const styles = theme => ({
   gridList: {
     flexWrap: "nowrap",
     transform: "translateZ(0)",
-    cellHeight: 90
-  }
+    height: 150,
+  },
+     
 });
 const WorkCulture = ({ classes, workCultureImage = workCulture }) => {
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={1.5}>
+      <GridList cellHeight={150} className={classes.gridList} cols={1.5}>
         {workCultureImage.map(image => (
           <GridListTile key={image}>
             <img src={image} />
