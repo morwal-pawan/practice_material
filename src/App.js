@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Header, Footer } from "./components/layouts";
 import { Contents } from "./components/contents";
 import Facilities from "./components/company/Facilities";
+import RolesResponsibilityCard from './components/company/RolesResponsibilityCard'
 
 class App extends Component {
   render() {
@@ -9,7 +10,7 @@ class App extends Component {
       <Fragment>
         <Header />
         {/* <Contents /> */}
-        <Facilities />
+        <RolesResponsibilityCard />
         <Footer />
       </Fragment>
     );
