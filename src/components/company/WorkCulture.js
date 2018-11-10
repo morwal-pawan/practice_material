@@ -7,7 +7,7 @@ import { workCulture } from "../../data/test_data";
 
 const styles = theme => ({
   root: {
-    paddingTop:10,
+    paddingTop: 10,
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-around",
@@ -17,9 +17,8 @@ const styles = theme => ({
   gridList: {
     flexWrap: "nowrap",
     transform: "translateZ(0)",
-    height: 150,
-  },
-     
+    height: 150
+  }
 });
 const WorkCulture = ({ classes, workCultureImage = workCulture }) => {
   return (

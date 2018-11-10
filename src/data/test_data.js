@@ -32,13 +32,21 @@ export const workCulture = [
   "https://www.thecoachingpanel.com/uploads/1/0/2/4/102415164/639258951_orig.jpg",
   "https://union-sp.ru/blog/wp-content/uploads/2017/07/sotrudnik-ploho-rabotaet.jpg"
 ];
-export const facilities = [
+export const company_facilities = [
   "Work life balance",
   "Quality of work",
   "Employee Stock Purchase Plan",
   "Retirement plan",
   "Business Travel Insurance",
   "Corporate Social responsibilities"
-
-
+];
+export const company_reviews = [
+  "Adobe is founded in dec 1982, 35 years back and its name is based on a river which flows behind warnock(founder) house.",
+  "Since its inception company has maintained two things:",
+  "Product quality(mainly digital domain)",
+  "Employee experience( Free snacks, food, soft drinks and what not)",
+  "If you have worked in service domain all your life and then joining Adobe Systems (company), you will feel hell lot differences as it is giving simply best benefits to employee ranging from Health wellness bonus (550$)",
+  "Stocks option, i have seen the stock increased from 80 to 231 in 2 years. So suppose if you invest 25% salary in the stock option, it would have become nearly 3 times. Not to mention you get 15% employee discount on current rate.",
+  "Company offers you 30k INR on spot bonus quatery for clearing any domain certification",
+  "Work life balance is best in the company."
 ];
