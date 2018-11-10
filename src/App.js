@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Header, Footer } from "./components/layouts";
 import { Contents } from "./components/contents";
-import RolesResponsibilityCard from "./components/company/RolesResponsibilityCard";
+import Facilities from "./components/company/Facilities";
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <Fragment>
         <Header />
         {/* <Contents /> */}
-        <RolesResponsibilityCard />
+        <Facilities />
         <Footer />
       </Fragment>
     );
