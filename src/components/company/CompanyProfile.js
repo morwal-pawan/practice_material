@@ -6,6 +6,7 @@ import WorkCulture from "./WorkCulture";
 import Perks from "./Perks";
 import RolesResponsibilityCard from "./RolesResponsibilityCard";
 import Facilities from "./Facilities";
+import Reviews from './Reviews'
 
 class CompanyProfile extends Component {
   state = {};
@@ -29,6 +30,9 @@ class CompanyProfile extends Component {
         </Grid>
         <Grid>
           <Facilities />
+        </Grid>
+        <Grid>
+          <Reviews />
         </Grid>
       </Grid>
     );

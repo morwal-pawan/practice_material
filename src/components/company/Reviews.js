@@ -9,11 +9,15 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { company_reviews } from "../../data/test_data";
 import red from "@material-ui/core/colors/red";
 import CheckCircle from "@material-ui/icons/CheckCircle";
-import Clear from "@material-ui/icons/Clear";
+import ThumbDown from "@material-ui/icons/ThumbDown";
+import ThumbUp from "@material-ui/icons/ThumbUp";
+import Button from "@material-ui/core/Button";
+import BookMark from "@material-ui/icons/Bookmark";
 
 const styles = theme => ({
   title: {
-    fontSize: 14
+    fontSize: 15,
+    fontWeight: 600
   },
   text: {
     fontSize: 12
@@ -45,11 +49,21 @@ const styles = theme => ({
     }
   },
   typography: {
-    display: "flex"
+    display: "flex",
+    fontSize: 10
   },
   userIcon: {
     margin: 9,
-    fontSize: 18
+    fontSize: 13
+  },
+  button: {
+    margin: theme.spacing.unit,
+    width: 38,
+    height: 38
+  },
+  buttonUserIcon: {
+    fontSize: 30,
+    width: 15
   }
 });
 class Reviews extends Component {
@@ -61,7 +75,20 @@ class Reviews extends Component {
   render() {
     const { reviews = company_reviews, classes } = this.props;
     return (
-      <Grid item xs>
+      <Grid
+        item
+        xs
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        spacing={2}
+      >
+        <Grid>
+          <Typography variant="title" className={classes.title} gutterBottom>
+            Reviews
+          </Typography>
+        </Grid>
         <Grid>
           {reviews.map((value, index) => {
             if (index <= 1) {
@@ -107,6 +134,17 @@ class Reviews extends Component {
               }
             })}
           </Collapse>
+        </Grid>
+        <Grid>
+          <Button variant="fab" color="primary" className={classes.button}>
+            <ThumbDown className={classes.buttonUserIcon} />
+          </Button>
+          <Button variant="fab" color="primary" className={classes.button}>
+            <BookMark className={classes.buttonUserIcon} />
+          </Button>
+          <Button variant="fab" color="primary" className={classes.button}>
+            <ThumbUp className={classes.buttonUserIcon} />
+          </Button>
         </Grid>
       </Grid>
     );
