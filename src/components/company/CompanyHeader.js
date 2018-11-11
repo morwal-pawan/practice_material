@@ -31,6 +31,10 @@ const styles = {
   },
   city: {
     fontWeight: 600
+  },
+  required_skills: {
+    textAlign: "center",
+    fontSize: 10
   }
 };
 const CompanyHeader = ({ classes, companyDetails = company_details }) => {
@@ -45,44 +49,46 @@ const CompanyHeader = ({ classes, companyDetails = company_details }) => {
   } = companyDetails;
   return (
     <Fragment>
-      <Card className={classes.card}>
-        <Grid container direction="column" justify="center" alignItems="center">
-          <Grid item>
-            <CardMedia
-              component="img"
-              className={classes.media}
-              height="160"
-              image={title_vedio}
-            />
-          </Grid>
-          <Grid item>
-            <img
-              className={classes.logo}
-              src={company_logo}
-            />
-          </Grid>
-          <Grid>
-            <Typography variant="title" className={classes.title} gutterBottom>
-             {job_type}
-            </Typography>
-          </Grid>
-          <Grid>
-            <Typography className={classes.location}>{location.country}</Typography>
-            <Typography variant="caption" gutterBottom>
-            {location.city}
-            </Typography>
-          </Grid>
+      <Grid container direction="column" justify="center" alignItems="center">
+        <Grid item>
+          <CardMedia
+            component="img"
+            className={classes.media}
+            height="160"
+            image={title_vedio}
+          />
         </Grid>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+        <Grid item>
+          <img className={classes.logo} src={company_logo} />
+        </Grid>
+        <Grid>
+          <Typography variant="title" className={classes.title} gutterBottom>
+            {job_type}
           </Typography>
-          <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+        </Grid>
+        <Grid>
+          <Typography className={classes.location}>
+            {location.country}
           </Typography>
-        </CardContent>
-      </Card>
+          <Typography variant="caption" gutterBottom>
+            {location.city}
+          </Typography>
+        </Grid>
+        <Grid>
+          <Typography variant="caption" className={classes.title} gutterBottom>
+            <span>{salary}</span> <span>{required_experience}</span>
+          </Typography>
+        </Grid>
+        <Grid>
+          <Typography gutterBottom variant="caption">
+            <p className={classes.required_skills}>
+              {required_skills.map(skill => {
+                return <span>{skill}.</span>;
+              })}
+            </p>
+          </Typography>
+        </Grid>
+      </Grid>
     </Fragment>
   );
 };
