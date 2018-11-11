@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from "react";
-import RolesResponsibilityCard from "./RolesResponsibilityCard";
 import CompanyHeader from "./CompanyHeader";
 import { Grid } from "@material-ui/core";
 import Qualification from "./Qualification";
 import WorkCulture from "./WorkCulture";
-import Perks from './Perks'
-import RolesResponsibilityCard from './RolesResponsibilityCard'
+import Perks from "./Perks";
+import RolesResponsibilityCard from "./RolesResponsibilityCard";
+import Facilities from "./Facilities";
 
-class JobProfile extends Component {
+class CompanyProfile extends Component {
   state = {};
   render() {
     return (
@@ -27,8 +27,11 @@ class JobProfile extends Component {
         <Grid>
           <Perks />
         </Grid>
+        <Grid>
+          <Facilities />
+        </Grid>
       </Grid>
     );
   }
 }
-export default JobProfile;
+export default CompanyProfile;

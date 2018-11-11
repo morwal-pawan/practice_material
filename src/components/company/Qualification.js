@@ -16,7 +16,7 @@ const styles = theme => ({
   },
   userIcon: {
     margin: 9,
-    fontSize: 13
+  fontSize: 13
   },
   title: {
     fontSize: 15,
