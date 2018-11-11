@@ -2,13 +2,11 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
+import { company_details } from "../../data/test_data";
 
 const styles = {
   card: {
@@ -30,11 +28,21 @@ const styles = {
   location: {
     fontSize: 10,
     fontWeight: 600
+  },
+  city: {
+    fontWeight: 600
   }
 };
-
-function CompanyHeader(props) {
-  const { classes } = props;
+const CompanyHeader = ({ classes, companyDetails = company_details }) => {
+  const {
+    job_type,
+    title_vedio,
+    location,
+    required_experience,
+    required_skills,
+    salary,
+    company_logo
+  } = companyDetails;
   return (
     <Fragment>
       <Card className={classes.card}>
@@ -44,27 +52,24 @@ function CompanyHeader(props) {
               component="img"
               className={classes.media}
               height="160"
-              image="https://techcrunch.com/wp-content/uploads/2015/11/284973.jpg?w=730&crop=1"
+              image={title_vedio}
             />
           </Grid>
           <Grid item>
             <img
               className={classes.logo}
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png"
+              src={company_logo}
             />
           </Grid>
           <Grid>
             <Typography variant="title" className={classes.title} gutterBottom>
-              Front End Developer
+             {job_type}
             </Typography>
           </Grid>
           <Grid>
-            <Typography className={classes.location}>Adobe, India</Typography>
-            <Typography
-              variant="caption"
-              gutterBottom
-            >
-              Bengulur, IN
+            <Typography className={classes.location}>{location.country}</Typography>
+            <Typography variant="caption" gutterBottom>
+            {location.city}
             </Typography>
           </Grid>
         </Grid>
@@ -80,7 +85,7 @@ function CompanyHeader(props) {
       </Card>
     </Fragment>
   );
-}
+};
 
 CompanyHeader.propTypes = {
   classes: PropTypes.object.isRequired

@@ -50,3 +50,24 @@ export const company_reviews = [
   "Company offers you 30k INR on spot bonus quatery for clearing any domain certification",
   "Work life balance is best in the company."
 ];
+export const company_details = {
+  job_type: "Front End Developer",
+  title_vedio: "https://techcrunch.com/wp-content/uploads/2015/11/284973.jpg?w=730&crop=1",
+
+  location: {
+    country: "Adobe, India",
+    city: "Bengulur, IN"
+  },
+  company_logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
+  salary: "21L-23L",
+  required_experience: "0-3yrs",
+  required_skills: [
+    "User Experience",
+    "User Research",
+    "WireFraming",
+    "Prototyping",
+    "User testing",
+    "Virtual Reality",
+    "Agile"
+  ]
+};
