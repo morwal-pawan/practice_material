@@ -4,6 +4,8 @@ import { Contents } from "./components/contents";
 import Facilities from "./components/company/Facilities";
 import RolesResponsibilityCard from './components/company/RolesResponsibilityCard'
 import Reviews from "./components/company/Reviews";
+import CompanyProfile from './components/company/CompanyHeader'
+
 
 class App extends Component {
   render() {
@@ -12,7 +14,7 @@ class App extends Component {
         <Header />
         {/* <Contents /> */}
         {/* <RolesResponsibilityCard /> */}
-        <Reviews/>
+        <CompanyProfile/>
         <Footer />
       </Fragment>
     );
