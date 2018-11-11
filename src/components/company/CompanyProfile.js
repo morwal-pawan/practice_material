@@ -5,6 +5,7 @@ import { Grid } from "@material-ui/core";
 import Qualification from "./Qualification";
 import WorkCulture from "./WorkCulture";
 import Perks from './Perks'
+import RolesResponsibilityCard from './RolesResponsibilityCard'
 
 class JobProfile extends Component {
   state = {};
@@ -13,6 +14,9 @@ class JobProfile extends Component {
       <Grid container>
         <Grid>
           <CompanyHeader />
+        </Grid>
+        <Grid>
+          <RolesResponsibilityCard />
         </Grid>
         <Grid>
           <Qualification />

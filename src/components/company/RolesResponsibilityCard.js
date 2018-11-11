@@ -7,6 +7,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
+import { Grid } from "@material-ui/core";
 
 const styles = theme => ({
   root: {
@@ -26,6 +27,16 @@ const styles = theme => ({
     maxWidth: 400,
     height: 100,
     padding: 10
+  },
+  title: {
+    fontSize: 15,
+    fontWeight: 600
+  },
+  roles_responsibility: {
+    width: "inherit",
+    textAlign: "center",
+    paddingTop: 10,
+    display: "grid"
   }
 });
 
@@ -34,21 +45,28 @@ const RolesResponsibilityCard = ({
   responsibilities = roles_responsibilities
 }) => {
   return (
-    <div className={classes.root}>
-      <GridList cellHeight={150} className={classes.gridList} cols={1.5}>
-        {responsibilities.map((value, index) => (
-          <GridListTile key={index + 1}>
-            <Card className={classes.card}>
-              <CardContent>
-                <Typography variant="caption">
-                  {index + 1}. {value}
-                </Typography>
-              </CardContent>
-            </Card>
-          </GridListTile>
-        ))}
-      </GridList>
-    </div>
+    <Grid className={classes.roles_responsibility}>
+      <Grid>
+        <Typography variant="title" className={classes.title} gutterBottom>
+          Front End Developer
+        </Typography>
+      </Grid>
+      <Grid className={classes.root}>
+        <GridList cellHeight={150} className={classes.gridList} cols={1.5}>
+          {responsibilities.map((value, index) => (
+            <GridListTile key={index + 1}>
+              <Card className={classes.card}>
+                <CardContent>
+                  <Typography variant="caption">
+                    {index + 1}. {value}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </GridListTile>
+          ))}
+        </GridList>
+      </Grid>
+    </Grid>
   );
 };
 

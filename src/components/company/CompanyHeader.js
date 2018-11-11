@@ -102,12 +102,6 @@ const CompanyHeader = ({ classes, companyDetails = company_details }) => {
           </Typography>
         </Grid>
         <Divider className={classes.divider} />
-        <Grid className={classes.roles_responsibility}>
-          <Typography variant="title" className={classes.title} gutterBottom>
-            {job_type}
-          </Typography>
-          <RolesResponsibilityCard />
-        </Grid>
       </Grid>
     </Fragment>
   );
