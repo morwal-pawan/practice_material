@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import { company_details } from "../../data/test_data";
+import Divider from "@material-ui/core/Divider";
+import RolesResponsibilityCard from "./RolesResponsibilityCard";
 
 const styles = {
   card: {
@@ -14,6 +14,13 @@ const styles = {
   },
   media: {
     objectFit: "cover"
+  },
+  divider: {
+    height: 1,
+    margin: 0,
+    border: "none",
+    backgroundColor: "rgba(0, 0, 0, 0.12)",
+    width: "inherit"
   },
   logo: {
     height: 38,
@@ -35,8 +42,14 @@ const styles = {
   required_skills: {
     textAlign: "center",
     fontSize: 10
+  },
+  roles_responsibility: {
+    width: "inherit",
+    textAlign: "center",
+    paddingTop: 10
   }
 };
+
 const CompanyHeader = ({ classes, companyDetails = company_details }) => {
   const {
     job_type,
@@ -87,6 +100,13 @@ const CompanyHeader = ({ classes, companyDetails = company_details }) => {
               })}
             </p>
           </Typography>
+        </Grid>
+        <Divider className={classes.divider} />
+        <Grid className={classes.roles_responsibility}>
+          <Typography variant="title" className={classes.title} gutterBottom>
+            {job_type}
+          </Typography>
+          <RolesResponsibilityCard />
         </Grid>
       </Grid>
     </Fragment>
