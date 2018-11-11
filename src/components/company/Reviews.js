@@ -9,10 +9,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { company_reviews } from "../../data/test_data";
 import red from "@material-ui/core/colors/red";
 import CheckCircle from "@material-ui/icons/CheckCircle";
-import ThumbDown from "@material-ui/icons/ThumbDown";
-import ThumbUp from "@material-ui/icons/ThumbUp";
-import Button from "@material-ui/core/Button";
-import BookMark from "@material-ui/icons/Bookmark";
 
 const styles = theme => ({
   title: {
@@ -55,15 +51,6 @@ const styles = theme => ({
   userIcon: {
     margin: 9,
     fontSize: 13
-  },
-  button: {
-    margin: theme.spacing.unit,
-    width: 38,
-    height: 38
-  },
-  buttonUserIcon: {
-    fontSize: 30,
-    width: 15
   }
 });
 class Reviews extends Component {
@@ -134,17 +121,6 @@ class Reviews extends Component {
               }
             })}
           </Collapse>
-        </Grid>
-        <Grid>
-          <Button variant="fab" color="primary" className={classes.button}>
-            <ThumbDown className={classes.buttonUserIcon} />
-          </Button>
-          <Button variant="fab" color="primary" className={classes.button}>
-            <BookMark className={classes.buttonUserIcon} />
-          </Button>
-          <Button variant="fab" color="primary" className={classes.button}>
-            <ThumbUp className={classes.buttonUserIcon} />
-          </Button>
         </Grid>
       </Grid>
     );
