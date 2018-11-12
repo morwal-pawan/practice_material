@@ -122,8 +122,7 @@ class Profile extends Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
-    const { classes, cardMarginTop } = this.props;
-   
+    const { classes, cardMarginTop, posted_job } = this.props;
     return (
       <Card className={classNames(classes.card)} style={cardMarginTop}>
         <Grid
@@ -137,18 +136,21 @@ class Profile extends Component {
             <CardContent>
               <Grid item>
                 <Typography variant="title" className={classes.jobTitle}>
-                  Data Scientist
+                  {posted_job.title}
                 </Typography>
                 <Typography
                   variant="subheading"
                   className={classes.CompanyName}
                 >
-                  Adbobe India Limited
+                  {posted_job.company_name}
                 </Typography>
-                <Typography className={classes.text}>Bengluru, IN</Typography>
+                <Typography className={classes.text}>
+                  {" "}
+                  {posted_job.location}
+                </Typography>
                 <Typography variant="caption" className={classes.response}>
                   {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
-                  Hot job. Expiring in 2 days
+                  {posted_job.expiring}
                 </Typography>
               </Grid>
             </CardContent>
@@ -158,7 +160,7 @@ class Profile extends Component {
                   component="img"
                   alt="Contemplative Reptile"
                   className={classes.media}
-                  image="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png"
+                  image={posted_job.company_logo}
                   title="Company logo"
                 />
               </Grid>
@@ -235,7 +237,10 @@ class Profile extends Component {
                 </Avatar>
               </Grid>
               <Grid>
-                <p className={classes.text}> Postted by : Ramesh Singhak </p>
+                <p className={classes.text}>
+                  {" "}
+                  Postted by : {posted_job.posted_by.name}{" "}
+                </p>
               </Grid>
               <Grid className={classes.quickResponse}>
                 <Button

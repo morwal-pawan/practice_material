@@ -52,13 +52,15 @@ export const company_reviews = [
 ];
 export const company_details = {
   job_type: "Front End Developer",
-  title_vedio: "https://techcrunch.com/wp-content/uploads/2015/11/284973.jpg?w=730&crop=1",
+  title_vedio:
+    "https://techcrunch.com/wp-content/uploads/2015/11/284973.jpg?w=730&crop=1",
 
   location: {
     country: "Adobe, India",
     city: "Bengulur, IN"
   },
-  company_logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
+  company_logo:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
   salary: "21L-23L",
   required_experience: "0-3yrs",
   required_skills: [
@@ -71,3 +73,39 @@ export const company_details = {
     "Agile"
   ]
 };
+export const posted_jobs = [
+  {
+    title: "Data Scientist",
+    company_name: "Adbobe India Limited",
+    company_logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
+    location: "Bengluru, IN",
+    expiring: "Hot job. Expiring in 2 days",
+    Specialities: [
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
+    ],
+    posted_by:{
+        name:"Ramesh Singhak",
+        image:""
+    }
+  },
+  {
+    title: "Data Scientist",
+    company_name: "Wipro IT Private Limited",
+    company_logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
+    location: "Bengluru, IN",
+    expiring: "Hot job. Expiring in 2 days",
+    Specialities: [
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
+    ],
+    posted_by:{
+        name:"Ramesh Singhak",
+        image:""
+    }
+  }
+];
