@@ -5,20 +5,21 @@ import AppBar from "@material-ui/core/AppBar";
 import Badge from "@material-ui/core/Badge";
 import red from "@material-ui/core/colors/red";
 import Settings from "@material-ui/icons/Settings";
+import Home from "@material-ui/icons/Home";
 import BookMark from "@material-ui/icons/Bookmark";
 import Typography from "@material-ui/core/Typography";
 import { Grid } from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 100,
-   
+    height: 100
   },
-  appBar:{
+  appBar: {
     boxShadow: "none",
-    backgroundColor:'white'
+    backgroundColor: "white"
   },
   badge: {
     top: 1,
@@ -63,6 +64,14 @@ const Header = ({ classes }) => {
         justify="flex-end"
         alignItems="center"
       >
+        <IconButton
+          color="secondary"
+          className={classes.button}
+          component={Link}
+          to="/"
+        >
+          <Home fontSize="medium" />
+        </IconButton>
         <Typography variant="h6" color="inherit">
           04 Jobs for you
         </Typography>

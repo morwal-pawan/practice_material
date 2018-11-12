@@ -18,6 +18,7 @@ import Button from "@material-ui/core/Button";
 import FlasOn from "@material-ui/icons/FlashOn";
 import Avatar from "@material-ui/core/Avatar";
 import CardActionArea from "@material-ui/core/CardActionArea";
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   card: {
@@ -133,7 +134,7 @@ class Profile extends Component {
           justify="space-evenly"
           alignItems="center"
         >
-          <CardActionArea onClick={changeCard} onDoubleClick={changeCard}>
+          <CardActionArea onClick={changeCard}>
             <Grid container item xs direction="row" justify="space-between">
               <CardContent>
                 <Grid item>
@@ -151,7 +152,6 @@ class Profile extends Component {
                     {posted_job.location}
                   </Typography>
                   <Typography variant="caption" className={classes.response}>
-                    {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
                     {posted_job.expiring}
                   </Typography>
                 </Grid>
@@ -160,7 +160,6 @@ class Profile extends Component {
                 <Grid item>
                   <CardMedia
                     component="img"
-                    alt="Contemplative Reptile"
                     className={classes.media}
                     image={posted_job.company_logo}
                     title="Company logo"
@@ -171,18 +170,20 @@ class Profile extends Component {
           </CardActionArea>
           <Divider className={classes.divider} />
           <Grid item xs>
-            <CardActions className={classes.actions} disableActionSpacing>
-              <Typography className={classes.text}>
-                <Typography
-                  variant="subtitle2"
-                  gutterBottom
-                  className={classes.skillheading}
-                >
-                  Specialities:
-                  {`Java,Node.js,Swing,Hibernate,
+            <CardActions className={classes.actions}>
+              <CardActionArea component={Link} to="/CompanyProfile">
+                <Typography className={classes.text}>
+                  <Typography
+                    variant="subtitle2"
+                    gutterBottom
+                    className={classes.skillheading}
+                  >
+                    Specialities:
+                    {`Java,Node.js,Swing,Hibernate,
                   J2EE,Hadoop,Spring...`}
+                  </Typography>
                 </Typography>
-              </Typography>
+              </CardActionArea>
               <Grid
                 container
                 direction="row"

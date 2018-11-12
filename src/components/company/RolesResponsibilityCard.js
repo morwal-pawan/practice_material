@@ -26,7 +26,8 @@ const styles = theme => ({
   card: {
     maxWidth: 400,
     height: 100,
-    padding: 10
+    padding: 10,
+    margin: 1
   },
   title: {
     fontSize: 15,
