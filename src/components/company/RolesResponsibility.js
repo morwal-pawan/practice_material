@@ -11,7 +11,11 @@ const RolesResponsibility = ({ responsibilities = roles_responsibilities }) => {
       {responsibilities.map((value, index) => {
         return (
           <Typography variant="caption">
+<<<<<<< HEAD
             {index+1}. {value}
+=======
+            {index}. {value}
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
           </Typography>
         );
       })}

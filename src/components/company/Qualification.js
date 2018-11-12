@@ -5,7 +5,10 @@ import { qualification } from "../../data/test_data";
 import CheckCircle from "@material-ui/icons/CheckCircle";
 import Clear from "@material-ui/icons/Clear";
 import { Grid } from "@material-ui/core";
+<<<<<<< HEAD
 import Response from '../layouts/Response'
+=======
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
 
 const styles = theme => ({
   text: {

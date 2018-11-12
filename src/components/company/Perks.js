@@ -19,7 +19,11 @@ const styles = theme => ({
   userIcon: {
     margin: 9,
     fontSize: 13
+<<<<<<< HEAD
   },
+=======
+  }
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
 });
 const Perks = ({ perk = perks, classes }) => {
   return (
@@ -34,14 +38,22 @@ const Perks = ({ perk = perks, classes }) => {
     >
       <Grid>
         <Typography variant="title" className={classes.title} gutterBottom>
+<<<<<<< HEAD
           Qulification
+=======
+          Perk
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
         </Typography>
       </Grid>
       <Grid>
         {perk.map((value, index) => {
           return (
             <Typography variant="caption" className={classes.typography}>
+<<<<<<< HEAD
               <FiberManualRecord className={classes.userIcon} color="primary" /> 
+=======
+              <FiberManualRecord className={classes.userIcon} color="primary" />
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
               <p>{value}</p>
             </Typography>
           );

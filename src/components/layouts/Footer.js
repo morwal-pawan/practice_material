@@ -30,7 +30,11 @@ const styles = theme => ({
   },
   text: {
     fontSize: 9,
+<<<<<<< HEAD
     padding:10
+=======
+    padding: 10
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
   },
   appBar: {
     display: "grid",

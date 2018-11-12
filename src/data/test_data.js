@@ -89,7 +89,11 @@ export const posted_jobs = [
     posted_by: {
       name: "Ramesh Singhak",
       image: "",
+<<<<<<< HEAD
       nick_name:"RS"
+=======
+      nick_name: "RS"
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
     }
   },
   {
@@ -107,7 +111,11 @@ export const posted_jobs = [
     posted_by: {
       name: "Pawan Mahawar",
       image: "",
+<<<<<<< HEAD
       nick_name:"PM"
+=======
+      nick_name: "PM"
+>>>>>>> 5d8ae6b7ddaa66cd4521c694b8e9df9c4a7ed7bc
     }
   }
 ];
