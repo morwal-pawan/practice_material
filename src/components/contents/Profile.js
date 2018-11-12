@@ -17,6 +17,7 @@ import LinearProgresIndicator from "./LinearProgresIndicator";
 import Button from "@material-ui/core/Button";
 import FlasOn from "@material-ui/icons/FlashOn";
 import Avatar from "@material-ui/core/Avatar";
+import CardActionArea from "@material-ui/core/CardActionArea";
 
 const styles = theme => ({
   card: {
@@ -122,8 +123,7 @@ class Profile extends Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
-    const { classes, cardMarginTop, posted_job } = this.props;
-    console.log("psoted_job >> ", posted_job);
+    const { classes, cardMarginTop, posted_job, changeCard } = this.props;
     return (
       <Card className={classNames(classes.card)} style={cardMarginTop}>
         <Grid
@@ -133,40 +133,42 @@ class Profile extends Component {
           justify="space-evenly"
           alignItems="center"
         >
-          <Grid container item xs direction="row" justify="space-between">
-            <CardContent>
-              <Grid item>
-                <Typography variant="title" className={classes.jobTitle}>
-                  {posted_job.title}
-                </Typography>
-                <Typography
-                  variant="subheading"
-                  className={classes.CompanyName}
-                >
-                  {posted_job.company_name}
-                </Typography>
-                <Typography className={classes.text}>
-                  {" "}
-                  {posted_job.location}
-                </Typography>
-                <Typography variant="caption" className={classes.response}>
-                  {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
-                  {posted_job.expiring}
-                </Typography>
-              </Grid>
-            </CardContent>
-            <CardContent>
-              <Grid item>
-                <CardMedia
-                  component="img"
-                  alt="Contemplative Reptile"
-                  className={classes.media}
-                  image={posted_job.company_logo}
-                  title="Company logo"
-                />
-              </Grid>
-            </CardContent>
-          </Grid>
+          <CardActionArea onClick={changeCard}>
+            <Grid container item xs direction="row" justify="space-between">
+              <CardContent>
+                <Grid item>
+                  <Typography variant="title" className={classes.jobTitle}>
+                    {posted_job.title}
+                  </Typography>
+                  <Typography
+                    variant="subheading"
+                    className={classes.CompanyName}
+                  >
+                    {posted_job.company_name}
+                  </Typography>
+                  <Typography className={classes.text}>
+                    {" "}
+                    {posted_job.location}
+                  </Typography>
+                  <Typography variant="caption" className={classes.response}>
+                    {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
+                    {posted_job.expiring}
+                  </Typography>
+                </Grid>
+              </CardContent>
+              <CardContent>
+                <Grid item>
+                  <CardMedia
+                    component="img"
+                    alt="Contemplative Reptile"
+                    className={classes.media}
+                    image={posted_job.company_logo}
+                    title="Company logo"
+                  />
+                </Grid>
+              </CardContent>
+            </Grid>
+          </CardActionArea>
           <Divider className={classes.divider} />
           <Grid item xs>
             <CardActions className={classes.actions} disableActionSpacing>

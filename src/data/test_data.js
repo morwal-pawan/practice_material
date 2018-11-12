@@ -91,7 +91,6 @@ export const posted_jobs = [
       image: ""
     }
   },
-  ,
   {
     title: "Data Scientist",
     company_name: "Wipro IT Private Limited",
@@ -105,24 +104,7 @@ export const posted_jobs = [
       "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
     ],
     posted_by: {
-      name: "Ramesh Singhak",
-      image: ""
-    }
-  },
-  {
-    title: "Data Scientist",
-    company_name: "Wipro IT Private Limited",
-    company_logo:
-      "https://upload.wikimedia.org/wikipedia/en/f/ff/Wipro_Logo_1.png",
-    location: "Bengluru, IN",
-    expiring: "Hot job. Expiring in 2 days",
-    Specialities: [
-      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
-      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
-      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
-    ],
-    posted_by: {
-      name: "Ramesh Singhak",
+      name: "Pawan Mahawar",
       image: ""
     }
   }
