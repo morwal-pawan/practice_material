@@ -16,11 +16,20 @@ const styles = theme => ({
   },
   userIcon: {
     margin: 9,
-  fontSize: 13
+    fontSize: 13
   },
   title: {
     fontSize: 15,
     fontWeight: 600
+  },
+  match: {
+    fontSize: 10,
+    marginTop: -14
+  },
+  rating: {
+    background: "#33cfe1",
+    fontSize: 16,
+    padding: 3
   }
 });
 
@@ -36,8 +45,11 @@ const Qualification = ({ qualifications = qualification, classes }) => {
       spacing={2}
     >
       <Grid>
-        <Typography variant="title" className={classes.title} gutterBottom>
-          Qulification
+        <Typography variant="title" gutterBottom>
+          <p className={classes.title}>Qulification</p>
+          <p className={classes.match}>
+            Your Match :<span className={classes.rating}>4/5</span>
+          </p>
         </Typography>
       </Grid>
       <Grid>

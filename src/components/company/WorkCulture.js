@@ -1,4 +1,3 @@
-
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -17,6 +16,9 @@ const styles = theme => ({
     overflow: "hidden",
     backgroundColor: theme.palette.background.paper
   },
+  image: {
+    height: 100
+  },
   title: {
     fontSize: 15,
     fontWeight: 600
@@ -24,15 +26,12 @@ const styles = theme => ({
   gridList: {
     flexWrap: "nowrap",
     transform: "translateZ(0)",
-    height: 150
+    height: 116
   }
 });
 const WorkCulture = ({ classes, workCultureImage = workCulture }) => {
   return (
-    <Fragment>
-
     <Grid
-      item
       xs
       container
       direction="column"
@@ -45,19 +44,14 @@ const WorkCulture = ({ classes, workCultureImage = workCulture }) => {
           Work Culture /Team
         </Typography>
       </Grid>
-      
-        <div className={classes.root}>
-          <GridList cellHeight={150} className={classes.gridList} cols={1.5}>
-            {workCultureImage.map(image => (
-              <GridListTile key={image}>
-                <img src={image} />
-              </GridListTile>
-            ))}
-          </GridList>
-        </div>
-     
+      <Grid className={classes.root}>
+        <GridList cellHeight={150} className={classes.gridList} cols={1.5}>
+          {workCultureImage.map(image => (
+            <img src={image} style={{ height: 100 }} />
+          ))}
+        </GridList>
+      </Grid>
     </Grid>
-    </Fragment>
   );
 };
 

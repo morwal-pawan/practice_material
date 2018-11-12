@@ -44,6 +44,12 @@ const styles = theme => ({
       color: red[800]
     }
   },
+  expandMoreIcon: {
+    fontSize: 16
+  },
+  readMore: {
+    fontSize: 13
+  },
   typography: {
     display: "flex",
     fontSize: 10
@@ -95,7 +101,7 @@ class Reviews extends Component {
           alignItems="flex-end"
         >
           <Grid item>
-            <p> Other reviews </p>
+            <p className={classes.readMore}> Other reviews </p>
           </Grid>
           <Grid item>
             <IconButton
@@ -106,7 +112,7 @@ class Reviews extends Component {
               aria-expanded={this.state.expanded}
               label={"Read more"}
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon className={classes.expandMoreIcon} />
             </IconButton>
           </Grid>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
