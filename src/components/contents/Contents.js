@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { Grid, Paper } from "@material-ui/core";
+import React from "react";
+import { Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import Profile from "./Profile";
 import Response from "../layouts/Response";
-import {posted_jobs} from '../../data/test_data'
+import { posted_jobs } from "../../data/test_data";
 
 const styles = theme => ({
   Paper: {
@@ -11,14 +11,20 @@ const styles = theme => ({
   },
   cardContainer: { position: "relative", height: 331 }
 });
-const Contents = ({ classes,jobs=posted_jobs }) => {
+const Contents = ({ classes, jobs = posted_jobs }) => {
+  let marginTop = 2;
   return (
     <Grid container>
       <Grid container item spacing={2} className={classes.cardContainer}>
-        <Profile cardMarginTop={{ marginTop: 0 }}  post_job={jobs[0]}/>
-        <Profile cardMarginTop={{ marginTop: -2 }} />
-        <Profile cardMarginTop={{ marginTop: -4 }} />
-        <Profile cardMarginTop={{ marginTop: -6 }} />
+        {jobs.map(job => {
+          marginTop = marginTop - 2;
+          return (
+            <Profile
+              cardMarginTop={{ marginTop: marginTop }}
+              posted_job={job}
+            />
+          );
+        })}
       </Grid>
       <Response />
       <Grid />

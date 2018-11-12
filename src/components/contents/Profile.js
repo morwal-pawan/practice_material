@@ -123,6 +123,7 @@ class Profile extends Component {
   };
   render() {
     const { classes, cardMarginTop, posted_job } = this.props;
+    console.log("psoted_job >> ", posted_job);
     return (
       <Card className={classNames(classes.card)} style={cardMarginTop}>
         <Grid

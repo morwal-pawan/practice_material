@@ -86,16 +86,17 @@ export const posted_jobs = [
       "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
       "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
     ],
-    posted_by:{
-        name:"Ramesh Singhak",
-        image:""
+    posted_by: {
+      name: "Ramesh Singhak",
+      image: ""
     }
   },
+  ,
   {
     title: "Data Scientist",
     company_name: "Wipro IT Private Limited",
     company_logo:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/210px-Adobe_Systems_logo_and_wordmark.svg.png",
+      "https://upload.wikimedia.org/wikipedia/en/f/ff/Wipro_Logo_1.png",
     location: "Bengluru, IN",
     expiring: "Hot job. Expiring in 2 days",
     Specialities: [
@@ -103,9 +104,26 @@ export const posted_jobs = [
       "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
       "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
     ],
-    posted_by:{
-        name:"Ramesh Singhak",
-        image:""
+    posted_by: {
+      name: "Ramesh Singhak",
+      image: ""
+    }
+  },
+  {
+    title: "Data Scientist",
+    company_name: "Wipro IT Private Limited",
+    company_logo:
+      "https://upload.wikimedia.org/wikipedia/en/f/ff/Wipro_Logo_1.png",
+    location: "Bengluru, IN",
+    expiring: "Hot job. Expiring in 2 days",
+    Specialities: [
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring",
+      "Java,Node.js,Swing,Hibernate,J2EE,Hadoop,Spring"
+    ],
+    posted_by: {
+      name: "Ramesh Singhak",
+      image: ""
     }
   }
 ];
