@@ -133,7 +133,7 @@ class Profile extends Component {
           justify="space-evenly"
           alignItems="center"
         >
-          <CardActionArea onClick={changeCard}>
+          <CardActionArea onClick={changeCard} onDoubleClick={changeCard}>
             <Grid container item xs direction="row" justify="space-between">
               <CardContent>
                 <Grid item>
@@ -236,7 +236,7 @@ class Profile extends Component {
                 <Avatar
                   className={classNames(classes.avatar, classes.bigAvatar)}
                 >
-                  RS
+                  {posted_job.posted_by.nick_name}
                 </Avatar>
               </Grid>
               <Grid>

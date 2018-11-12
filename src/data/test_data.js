@@ -88,7 +88,8 @@ export const posted_jobs = [
     ],
     posted_by: {
       name: "Ramesh Singhak",
-      image: ""
+      image: "",
+      nick_name:"RS"
     }
   },
   {
@@ -105,7 +106,8 @@ export const posted_jobs = [
     ],
     posted_by: {
       name: "Pawan Mahawar",
-      image: ""
+      image: "",
+      nick_name:"PM"
     }
   }
 ];
