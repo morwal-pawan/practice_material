@@ -13,7 +13,12 @@ import IconButton from "@material-ui/core/IconButton";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    height: 100
+    height: 100,
+   
+  },
+  appBar:{
+    boxShadow: "none",
+    backgroundColor:'white'
   },
   badge: {
     top: 1,
@@ -50,7 +55,7 @@ const styles = theme => ({
 
 const Header = ({ classes }) => {
   return (
-    <AppBar position="static" color="default">
+    <AppBar position="static" color="default" className={classes.appBar}>
       <Grid
         className={classes.root}
         container
