@@ -24,8 +24,9 @@ const styles = theme => ({
     paddingTop: 16,
     paddingLeft: 5,
     paddingRight: 5,
-    paddingBottom: 15,
-    margin:10
+    paddingBottom: 10,
+    margin: 10,
+    position: "absolute"
   },
   cardStyle: {
     paddingTop: 16,
@@ -41,7 +42,7 @@ const styles = theme => ({
     width: "inherit"
   },
   readMore: {
-    fontSize: 13,
+    fontSize: 13
   },
   title: {
     fontSize: 14
@@ -56,14 +57,14 @@ const styles = theme => ({
     color: "black",
     display: "contents"
   },
-  jobTitle:{
+  jobTitle: {
     fontSize: 15,
     fontWeight: "bold"
   },
   icon: {
     margin: theme.spacing.unit * 2
   },
-  CompanyName:{
+  CompanyName: {
     fontSize: 12,
     fontWeight: "bold"
   },
@@ -121,10 +122,10 @@ class Profile extends Component {
     this.setState(state => ({ expanded: !state.expanded }));
   };
   render() {
-    const { classes } = this.props;
-
+    const { classes, cardMarginTop } = this.props;
+   
     return (
-      <Card className={classes.card}>
+      <Card className={classNames(classes.card)} style={cardMarginTop}>
         <Grid
           container
           spacing={8}
@@ -135,8 +136,13 @@ class Profile extends Component {
           <Grid container item xs direction="row" justify="space-between">
             <CardContent>
               <Grid item>
-                <Typography variant="title" className={classes.jobTitle}>Data Scientist</Typography>
-                <Typography variant="subheading" className={classes.CompanyName}>
+                <Typography variant="title" className={classes.jobTitle}>
+                  Data Scientist
+                </Typography>
+                <Typography
+                  variant="subheading"
+                  className={classes.CompanyName}
+                >
                   Adbobe India Limited
                 </Typography>
                 <Typography className={classes.text}>Bengluru, IN</Typography>
@@ -161,7 +167,7 @@ class Profile extends Component {
           <Divider className={classes.divider} />
           <Grid item xs>
             <CardActions className={classes.actions} disableActionSpacing>
-              <Typography  className={classes.text}> 
+              <Typography className={classes.text}>
                 <Typography
                   variant="subtitle2"
                   gutterBottom

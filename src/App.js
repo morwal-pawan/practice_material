@@ -12,9 +12,8 @@ class App extends Component {
     return (
       <Fragment>
         <Header />
-        {/* <Contents /> */}
-        {/* <RolesResponsibilityCard /> */}
-        <CompanyProfile/>
+        <Contents />
+        {/* <CompanyProfile/> */}
         <Footer />
       </Fragment>
     );
