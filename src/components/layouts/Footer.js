@@ -1,30 +1,92 @@
-import React, { Fragment } from "react";
-import { Tabs, Tab } from "material-ui/Tabs";
-import FontIcon from "material-ui/FontIcon";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import Phone from "material-ui/svg-icons/communication/phone";
-import MapsPersonPin from "material-ui/svg-icons/maps/person-pin";
-import Alarm from "material-ui/svg-icons/action/alarm";
-import Favorite from "material-ui/svg-icons/action/favorite";
-import Icon from "@material-ui/core/Icon";
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import PermIdentity from "@material-ui/icons/PermIdentity";
+import NotificationsNone from "@material-ui/icons/NotificationsNone";
+import InsertDriveFile from "@material-ui/icons/InsertDriveFile";
+import CardTravel from "@material-ui/icons/CardTravel";
+import Typography from "@material-ui/core/Typography";
 
-const Footer = props => {
+function TabContainer(props) {
   return (
-    <MuiThemeProvider>
-      <Tabs
-      indicatorColor="primary"
-      textColor="primary"
-      >
-        {/* <Tab
-          icon={<FontIcon className="material-icons">phone</FontIcon>}
-          label="RECENTS"
-        /> */}
-        <Tab icon={<Phone />} label="RECENTS" />
-        <Tab icon={<Alarm />} label="ACTIVITY" />
-        <Tab icon={<Favorite />} label="FAVORITES" />
-        <Tab icon={<MapsPersonPin />} label="NEARBY" />
-      </Tabs>
-    </MuiThemeProvider>
+    <Typography component="div" style={{ padding: 8 * 3 }}>
+      {props.children}
+    </Typography>
   );
+}
+
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired
 };
-export default Footer;
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    width: "100%",
+    backgroundColor: theme.palette.background.paper
+  },
+  text: {
+    fontSize: 9,
+    padding: 10
+  },
+  appBar: {
+    display: "grid",
+    direction: "row",
+    justify: "space-around",
+    alignItems: "center"
+  }
+});
+
+class ScrollableTabsButtonForce extends React.Component {
+  state = {
+    value: 0
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  render() {
+    const { classes } = this.props;
+    const { value } = this.state;
+
+    return (
+      <div className={classes.root}>
+        <AppBar position="static" color="default" className={classes.appBar}>
+          <Tabs
+            value={value}
+            onChange={this.handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+          >
+            <Tab label="JOBS" className={classes.text} icon={<CardTravel />} />
+            <Tab
+              label="ACTIVITY"
+              className={classes.text}
+              icon={<NotificationsNone />}
+            />
+            <Tab
+              label="FEED"
+              className={classes.text}
+              icon={<InsertDriveFile />}
+            />
+            <Tab
+              label="PROFILE"
+              className={classes.text}
+              icon={<PermIdentity />}
+            />
+          </Tabs>
+        </AppBar>
+      </div>
+    );
+  }
+}
+
+ScrollableTabsButtonForce.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(ScrollableTabsButtonForce);

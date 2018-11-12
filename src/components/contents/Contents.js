@@ -1,32 +1,45 @@
-import React, { Fragment } from "react";
-import { Grid, Paper } from "@material-ui/core";
-import Left from "./Left";
-import Right from "./Right";
+import React, { Component } from "react";
+import { Grid } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
+import Profile from "./Profile";
+import Response from "../layouts/Response";
+import { posted_jobs } from "../../data/test_data";
 
-const styles = {
+const styles = theme => ({
   Paper: {
-    padding: 20,
-    marginTop: 10,
-    marginBottom: 10
+    padding: 20
+  },
+  cardContainer: { position: "relative", height: 331 }
+});
+class Contents extends Component {
+  state = { posted_jobs: posted_jobs };
+  handleChangeChad = () => {
+    let jobs = this.state.posted_jobs;
+    jobs.unshift(jobs.pop());
+    this.setState({ posted_jobs: jobs });
+  };
+  render() {
+    const { classes } = this.props;
+    const { posted_jobs } = this.state;
+    let marginTop = 2;
+    return (
+      <Grid container>
+        <Grid container item spacing={2} className={classes.cardContainer}>
+          {posted_jobs.map(job => {
+            marginTop = marginTop - 2;
+            return (
+              <Profile
+                cardMarginTop={{ marginTop: marginTop }}
+                posted_job={job}
+                changeCard={this.handleChangeChad}
+              />
+            );
+          })}
+        </Grid>
+        <Response />
+        <Grid />
+      </Grid>
+    );
   }
-};
-
-const Contents = props => {
-  return (
-    <Grid
-      container
-      spacing={2}
-      direction="row"
-      justify="space-between"
-      alignItems="center"
-    >
-      <Grid item xs>
-        <Left styles={styles} />
-      </Grid>
-      <Grid item xs>
-        <Right styles={styles} />
-      </Grid>
-    </Grid>
-  );
-};
-export default Contents;
+}
+export default withStyles(styles)(Contents);
