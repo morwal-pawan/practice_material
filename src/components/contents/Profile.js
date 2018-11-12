@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
+import classNames from "classnames";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -13,9 +14,9 @@ import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import LinearProgresIndicator from "./LinearProgresIndicator";
-import ImageAvatars from "./ImageAvatars";
 import Button from "@material-ui/core/Button";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import FlasOn from "@material-ui/icons/FlashOn";
+import Avatar from "@material-ui/core/Avatar";
 
 const styles = theme => ({
   card: {
@@ -23,7 +24,8 @@ const styles = theme => ({
     paddingTop: 16,
     paddingLeft: 5,
     paddingRight: 5,
-    paddingBottom: 16
+    paddingBottom: 15,
+    margin:10
   },
   cardStyle: {
     paddingTop: 16,
@@ -38,11 +40,14 @@ const styles = theme => ({
     backgroundColor: "rgba(0, 0, 0, 0.12)",
     width: "inherit"
   },
+  readMore: {
+    fontSize: 13,
+  },
   title: {
     fontSize: 14
   },
   text: {
-    fontSize: 12
+    fontSize: 10
   },
   response: {
     fontSize: 8
@@ -51,8 +56,16 @@ const styles = theme => ({
     color: "black",
     display: "contents"
   },
+  jobTitle:{
+    fontSize: 15,
+    fontWeight: "bold"
+  },
   icon: {
     margin: theme.spacing.unit * 2
+  },
+  CompanyName:{
+    fontSize: 12,
+    fontWeight: "bold"
   },
   actions: {
     display: "flex",
@@ -68,6 +81,9 @@ const styles = theme => ({
       marginRight: -8
     }
   },
+  expandMoreIcon: {
+    fontSize: 16
+  },
   expandOpen: {
     transform: "rotate(180deg)"
   },
@@ -80,6 +96,21 @@ const styles = theme => ({
   media: {
     objectFit: "cover",
     height: 60
+  },
+  row: {
+    display: "flex",
+    justifyContent: "center"
+  },
+  avatar: {
+    margin: 8
+  },
+  bigAvatar: {
+    width: 36,
+    height: 36
+  },
+  quickResponse: {
+    padding: 0,
+    paddingRight: 13
   }
 });
 
@@ -104,12 +135,12 @@ class Profile extends Component {
           <Grid container item xs direction="row" justify="space-between">
             <CardContent>
               <Grid item>
-                <Typography variant="title">Data Scientist</Typography>
-                <Typography variant="subheading">
+                <Typography variant="title" className={classes.jobTitle}>Data Scientist</Typography>
+                <Typography variant="subheading" className={classes.CompanyName}>
                   Adbobe India Limited
                 </Typography>
-                <Typography>Bengluru, IN</Typography>
-                <Typography variant="caption">
+                <Typography className={classes.text}>Bengluru, IN</Typography>
+                <Typography variant="caption" className={classes.response}>
                   {/*  <Icon className={classNames(classes.icon, 'fa fa-plus-circle')} />  */}
                   Hot job. Expiring in 2 days
                 </Typography>
@@ -130,7 +161,7 @@ class Profile extends Component {
           <Divider className={classes.divider} />
           <Grid item xs>
             <CardActions className={classes.actions} disableActionSpacing>
-              <Typography paragraph>
+              <Typography  className={classes.text}> 
                 <Typography
                   variant="subtitle2"
                   gutterBottom
@@ -148,7 +179,7 @@ class Profile extends Component {
                 alignItems="flex-end"
               >
                 <Grid item>
-                  <p> Read more</p>
+                  <p className={classes.readMore}> Read more</p>
                 </Grid>
                 <Grid item>
                   <IconButton
@@ -159,7 +190,7 @@ class Profile extends Component {
                     aria-expanded={this.state.expanded}
                     label={"Read more"}
                   >
-                    <ExpandMoreIcon />
+                    <ExpandMoreIcon className={classes.expandMoreIcon} />
                   </IconButton>
                 </Grid>
               </Grid>
@@ -179,7 +210,7 @@ class Profile extends Component {
           </Grid>
           <Grid container itme xs direction="column" justify="space-between">
             <Grid item>
-              <p> 90% pawan</p>
+              <p className={classes.response}> 90% Profile match</p>
               <LinearProgresIndicator />
             </Grid>
             <Grid
@@ -191,20 +222,22 @@ class Profile extends Component {
               spacing={0}
             >
               <Grid>
-                <ImageAvatars />
+                <Avatar
+                  className={classNames(classes.avatar, classes.bigAvatar)}
+                >
+                  RS
+                </Avatar>
               </Grid>
               <Grid>
                 <p className={classes.text}> Postted by : Ramesh Singhak </p>
               </Grid>
-              <Grid>
+              <Grid className={classes.quickResponse}>
                 <Button
                   size="small"
                   className={classes.response}
                   color="primary"
                 >
-                  <IconButton aria-label="Add to favorites">
-                    <FavoriteIcon />
-                  </IconButton>
+                  <FlasOn />
                   Quick response
                 </Button>
               </Grid>
